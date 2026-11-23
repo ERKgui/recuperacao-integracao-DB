@@ -29,7 +29,7 @@ export async function buscarPorId(id) {
 }
 
 export async function atualizar(id, leitura) {
-    const sql = "UPDATE SET leituras_energia(consumo_kwh, horas_operacao) VALUES(?,?)"
+    const sql = "UPDATE SET leituras_energia(maquina_id, data_leitura, consumo_kwh, horas_operacao) VALUES(?,?,?,?)"
     const [resultado] = await conexao.execute(sql, [id, leitura])
 
     return resultado.affectedRows;
