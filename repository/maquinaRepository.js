@@ -29,7 +29,7 @@ export async function atualizar(id, maquina) {
 }
 
 export async function deletar(id) {
-    const sql = "DELETE maquinas WHERE id = ?"
+    const sql = "DELETE FROM maquinas WHERE id = ?"
     const [resultado] = await conexao.execute(sql, [id])
 
     return resultado.affectedRows;
