@@ -1,3 +1,5 @@
+import conexao from "../config/conexao.js";
+
 export async function cadastrar(maquina) {
     const sql = "INSERT INTO maquinas(codigo, nome, setor) VALUES(?,?,?)"
     const [resultado] = await conexao.execute(sql, [maquina])
