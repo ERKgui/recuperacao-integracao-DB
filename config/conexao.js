@@ -10,4 +10,3 @@ const conexao = mysql2.createPool({
 })
 export default conexao;
 
-apagar
