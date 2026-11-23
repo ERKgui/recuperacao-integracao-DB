@@ -11,14 +11,14 @@ export async function listar() {
     const sql = "SELECT * FROM leituras_energias"
     const [resultado] = await conexao.execute(sql)
 
-    return resultado;
+    return resultado[0];
 }
 
 export async function listarDetalhadas() {
     const sql = "SELECT ? FROM leituras_energias WHERE id = ?"
     const [resultado] = await conexao.execute(sql)
 
-    return resultado;
+    return resultado[0];
 }
 
 export async function buscarPorId(id) {
