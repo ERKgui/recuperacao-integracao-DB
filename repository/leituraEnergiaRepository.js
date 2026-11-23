@@ -42,4 +42,3 @@ export async function deletar(id) {
     return resultado.affectedRows;
 }
 
-apagar
