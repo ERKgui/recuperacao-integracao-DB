@@ -1,0 +1,36 @@
+export async function cadastrar(maquina) {
+    const sql = "INSERT INTO maquinas(codigo, nome, setor) VALUES(?,?,?)"
+    const [resultado] = await conexao.execute(sql, [maquina])
+
+    return resultado.insertId;
+}
+
+export async function listar() {
+    const sql = "SELECT * FROM maquinas"
+    const [resultado] = await conexao.execute(sql)
+
+    return resultado;
+}
+
+export async function buscarPorId(id) {
+    const sql = "SELECT * FROM maquinas WHERE id = ?"
+    const [resultado] = await conexao.execute(sql,[id])
+
+    return resultado;
+}
+
+export async function atualizar(id, maquina) {
+    const sql = "UPDATE maquinas(consumo_kwh, horas_operacao) VALUES(?,?)"
+    const [resultado] = await conexao.execute(sql, [id, maquina])
+
+    return resultado.affectedRows;
+}
+
+export async function deletar(id) {
+    const sql = "DELETE maquinas WHERE id = ?"
+    const [resultado] = await conexao.execute(sql, [id])
+
+    return resultado.affectedRows;
+}
+
+apagar
