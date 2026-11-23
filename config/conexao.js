@@ -6,7 +6,8 @@ const conexao = mysql2.createPool({
     user: process.env.DB_USER,
     password: process.env.DB_PASSWORD,
     database: process.env.DB_NAME,
-    waitForConnections: true
+    waitForConnections: true,
+    ConnectionForlimit: 10
 });
 export default conexao;
 
