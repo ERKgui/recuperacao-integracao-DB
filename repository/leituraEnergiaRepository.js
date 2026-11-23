@@ -36,7 +36,7 @@ export async function atualizar(id, leitura) {
 }
 
 export async function deletar(id) { 
-    const sql = "DELETE leituras_energia WHERE id = ?"
+    const sql = "DELETE FROM leituras_energia WHERE id = ?"
     const [resultado] = await conexao.execute(sql, [id])
 
     return resultado.affectedRows;
