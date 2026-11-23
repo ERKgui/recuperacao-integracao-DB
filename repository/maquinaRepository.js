@@ -9,7 +9,7 @@ export async function listar() {
     const sql = "SELECT * FROM maquinas"
     const [resultado] = await conexao.execute(sql)
 
-    return resultado;
+    return resultado[0];
 }
 
 export async function buscarPorId(id) {
